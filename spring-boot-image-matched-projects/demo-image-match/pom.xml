@@ -10,6 +10,7 @@
   <properties>
     <java.version>17</java.version>
     <spring-boot.version>3.3.4</spring-boot.version>
+    <sonar.organization>research-projects-all</sonar.organization>
   </properties>
 
   <dependencyManagement>
