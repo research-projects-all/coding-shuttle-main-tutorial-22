@@ -37,8 +37,8 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Build and analyze
-        working-directory: ./spring-boot-image-matched-projects   # 🔴 ADD THIS LINE
+        working-directory: ./spring-boot-image-matched-projects
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-          -Dsonar.projectKey=research-projects-all_coding-shuttle-main-tutorial-22
+        run: mvn -B -Dsonar.projectKey=research-projects-all_coding-shuttle-main-tutorial-22 verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+      
