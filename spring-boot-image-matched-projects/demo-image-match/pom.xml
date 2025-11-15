@@ -1,55 +1,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
 
-  <!-- Common coordinates for the whole project -->
-  <groupId>com.codingshuttle</groupId>
-  <artifactId>spring-boot-image-matched-projects</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
+  <!-- Inherit from parent -->
+  <parent>
+    <groupId>com.codingshuttle</groupId>
+    <artifactId>spring-boot-image-matched-projects</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>..</relativePath>
+  </parent>
 
-  <name>Spring Boot Image Matched Projects</name>
-  <description>Parent project for TestingApp and demo image match services</description>
+  <!-- Project-specific coordinates -->
+  <artifactId>demo</artifactId>
+  <name>demo</name>
+  <description>Demo project for Spring Boot</description>
 
-  <!-- Shared properties -->
-  <properties>
-    <java.version>17</java.version>
-    <spring-boot.version>3.3.4</spring-boot.version>
-
-    <!-- SonarCloud -->
-    <sonar.organization>research-projects-all</sonar.organization>
-    <sonar.projectKey>research-projects-all_coding-shuttle-main-tutorial-22</sonar.projectKey>
-  </properties>
-
-  <!-- Modules (subprojects) -->
-  <modules>
-    <module>TestingApp-image-match</module>
-    <module>demo-image-match</module>
-  </modules>
-
-  <!-- Shared Spring Boot dependency management -->
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${spring-boot.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
-  <!-- Spring Boot Maven plugin inherited by children -->
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
 </project>
